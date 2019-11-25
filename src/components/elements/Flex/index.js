@@ -11,10 +11,7 @@ const Div = styled.div`
 
 const Flex = ({ children, flexDirection, padding }) => {
   return (
-    <Div
-      flexDirection={flexDirection}
-      padding={padding}
-    >
+    <Div flexDirection={flexDirection} padding={padding}>
       {children}
     </Div>
   );

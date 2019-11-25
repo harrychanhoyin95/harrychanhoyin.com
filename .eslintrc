@@ -5,10 +5,12 @@
     "node": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "strict": 0,
     "semi": "error",
     "no-trailing-spaces": 2
   },
+  "plugins": ["prettier"],
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"

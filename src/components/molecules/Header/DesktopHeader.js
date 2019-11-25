@@ -26,10 +26,7 @@ const DesktopHeader = ({ headerItems, display }) => {
       <Menu mx={3}>
         {headerItems.map(item => {
           return (
-            <MenuItem
-              key={item}
-              padding={4}
-            >
+            <MenuItem key={item} padding={4}>
               {item}
             </MenuItem>
           );

@@ -35,7 +35,7 @@ const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: ${props => props.sidebarOpen ? '60%' : '0'};
+  width: ${props => (props.sidebarOpen ? '60%' : '0')};
   position: fixed;
   top: 0;
   left: 0;
@@ -66,10 +66,18 @@ const MenuItem = styled.div`
   ${space}
 `;
 
-const MobileSidebar = ({ headerItems, display, sidebarOpen, setSidebarOpen }) => {
+const MobileSidebar = ({
+  headerItems,
+  display,
+  sidebarOpen,
+  setSidebarOpen,
+}) => {
   return (
     <Fragment>
-      <BurgerButton display={display} onClick={() => setSidebarOpen(!sidebarOpen)}>
+      <BurgerButton
+        display={display}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
         <BurgerBar top={'0'} />
         <BurgerBar top={'40%'} />
         <BurgerBar top={'80%'} />
@@ -80,11 +88,15 @@ const MobileSidebar = ({ headerItems, display, sidebarOpen, setSidebarOpen }) =>
         onClick={() => console.log('Toggle')}
       />
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
-        <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">&times;</CloseBtn>
+        <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">
+          &times;
+        </CloseBtn>
         <Flex flexDirection={'column'}>
           {headerItems.map(item => {
             return (
-              <MenuItem key={item} py={3}>{item}</MenuItem>
+              <MenuItem key={item} py={3}>
+                {item}
+              </MenuItem>
             );
           })}
         </Flex>

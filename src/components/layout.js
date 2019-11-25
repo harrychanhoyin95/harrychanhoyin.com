@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { Fragment } from "react";
-import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+import React, { Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
@@ -15,7 +15,7 @@ import Header from './molecules/Header';
 import Footer from './footer';
 
 const Content = styled.main`
-  margin-left: ${props => props.sidebarOpen ? '60%' : '0'};
+  margin-left: ${props => (props.sidebarOpen ? '60%' : '0')};
   transition: all 0.3s;
 
   ${space}
@@ -23,15 +23,15 @@ const Content = styled.main`
 
 const Overlay = styled.div`
   position: fixed;
-  visibility: ${props => props.sidebarOpen ? 'visible' : 'hidden'};
-  opacity: ${props => props.sidebarOpen ? 1 : 0};
+  visibility: ${props => (props.sidebarOpen ? 'visible' : 'hidden')};
+  opacity: ${props => (props.sidebarOpen ? 1 : 0)};
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   transition: all 0.3s;
 `;
@@ -55,8 +55,13 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
         setSidebarOpen={setSidebarOpen}
         {...props}
       />
-        <Content sidebarOpen={sidebarOpen} pt={6} px={4}>{children}</Content>
-        <Overlay sidebarOpen={sidebarOpen} onClick={() => setSidebarOpen(!sidebarOpen)}/>
+      <Content sidebarOpen={sidebarOpen} pt={[6, 0]} px={[4, 5]}>
+        {children}
+      </Content>
+      <Overlay
+        sidebarOpen={sidebarOpen}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      />
       <Footer />
     </Fragment>
   );

@@ -15,9 +15,7 @@ const Bar = styled.span`
 `;
 
 const BurgerBar = ({ top }) => {
-  return (
-    <Bar top={top}></Bar>
-  );
+  return <Bar top={top}></Bar>;
 };
 
 BurgerBar.propTypes = {

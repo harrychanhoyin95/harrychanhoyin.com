@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Switch } from 'antd';
 
@@ -8,9 +8,7 @@ import 'antd/es/switch/style/index.css';
 const StyledSwitch = styled(Switch)``;
 
 const ToggleSwitch = ({ size, onChange }) => {
-  return (
-    <StyledSwitch size={size} onChange={onChange} />
-  );
+  return <StyledSwitch size={size} onChange={onChange} />;
 };
 
 ToggleSwitch.propTypes = {

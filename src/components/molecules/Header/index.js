@@ -17,14 +17,18 @@ const Header = ({ ...props }) => {
         }
       }
     }
-`);
+  `);
 
   const headerItems = data.allContentfulHeader.edges[0].node.headerItems.items;
 
   return (
     <header>
       <DesktopHeader headerItems={headerItems} display={['none', 'block']} />
-      <MobileSidebar headerItems={headerItems} display={['flex', 'none']} {...props} />
+      <MobileSidebar
+        headerItems={headerItems}
+        display={['flex', 'none']}
+        {...props}
+      />
     </header>
   );
 };
