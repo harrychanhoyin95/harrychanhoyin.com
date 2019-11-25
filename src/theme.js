@@ -3,6 +3,7 @@ const theme = {
   colors: {
     primary: '#9147FF',
     text: '#0D0D10',
+    greyText: '#5e5e5e',
     sidebar: '#EFEFF1',
     mode: {
       dark: {
@@ -12,6 +13,7 @@ const theme = {
     },
   },
   space: [0, 4, 8, 16, 32, 64, 96, 128, 256, 512],
+  radii: [0, 16],
 };
 
 export default theme;

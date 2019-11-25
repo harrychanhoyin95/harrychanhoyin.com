@@ -1,4 +1,4 @@
-
+// const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -12,8 +12,8 @@ module.exports = {
     // {
     //   resolve: 'gatsby-source-filesystem',
     //   options: {
-    //     name: `data`,
-    //     path: `${__dirname}/data/`,
+    //     name: `images`,
+    //     path: path.join(__dirname, `src`, `images`),
     //   },
     // },
     'gatsby-transformer-sharp',

@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space } from 'styled-system';
+import { space, color, layout, flexbox } from 'styled-system';
 
 const Div = styled.div`
-  flex-direction: ${props => props.flexDirection};
+  display: flex;
 
+  ${flexbox}
   ${space}
+  ${color}
+  ${layout}
 `;
 
-const Flex = ({ children, flexDirection, padding }) => {
+const Flex = ({ children, flexDirection, width, ...props }) => {
   return (
-    <Div flexDirection={flexDirection} padding={padding}>
+    <Div flexDirection={flexDirection} width={width} {...props}>
       {children}
     </Div>
   );
@@ -20,7 +23,7 @@ const Flex = ({ children, flexDirection, padding }) => {
 Flex.propTypes = {
   children: PropTypes.node.isRequired,
   flexDirection: PropTypes.string,
-  padding: PropTypes.number,
+  width: PropTypes.string,
 };
 
 Flex.defaultProps = {

@@ -6,6 +6,7 @@ import theme from '../theme';
 import GlobalStyle from '../globalStyle';
 import Section from '../components/elements/Section';
 import AboutSection from '../components/sections/AboutSection';
+import ExperienceSection from '../components/sections/ExperienceSection';
 
 const IndexPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -15,7 +16,7 @@ const IndexPage = () => {
       <GlobalStyle />
       <Layout sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
         <AboutSection />
-        <Section>Exp</Section>
+        <ExperienceSection />
         <Section>Projects</Section>
         <Section>Contact</Section>
       </Layout>
