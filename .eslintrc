@@ -2,11 +2,12 @@
   "parser": "babel-eslint",
   "env": {
     "browser": true,
-    "node": true,
+    "node": true
   },
   "rules": {
     "strict": 0,
     "semi": "error",
+    "no-trailing-spaces": 2
   },
   "extends": [
     "eslint:recommended",
@@ -14,7 +15,7 @@
   ],
   "settings": {
     "react": {
-      "version": "detect",
-    },
-  },
+      "version": "detect"
+    }
+  }
 }
