@@ -1,6 +1,7 @@
 const theme = {
   breakpoints: ['768px', '1024px'],
   colors: {
+    primary: '#9147FF',
     text: '#0D0D10',
     sidebar: '#EFEFF1',
     mode: {
