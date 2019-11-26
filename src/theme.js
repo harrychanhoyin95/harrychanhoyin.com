@@ -15,7 +15,7 @@ const theme = {
     },
   },
   space: [0, 4, 8, 16, 32, 64, 96, 128, 256, 512],
-  radii: [0, 16],
+  radii: [0, 4, 16],
 };
 
 export default theme;

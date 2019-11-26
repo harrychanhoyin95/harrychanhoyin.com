@@ -28,12 +28,7 @@ const AboutSection = () => {
           path.
         </Introduction>
         <Flex>
-          <Button
-            link={'mailto:harrychanhoyin95@gmail.com'}
-            borderColor={'primary'}
-          >
-            Email Me
-          </Button>
+          <Button link={'mailto:harrychanhoyin95@gmail.com'}>Hire Me</Button>
         </Flex>
       </Container>
     </Section>

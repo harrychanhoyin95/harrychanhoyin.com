@@ -6,7 +6,7 @@ import { color, border, space } from 'styled-system';
 const StyledButton = styled.button`
   cursor: pointer;
   border: 1px solid;
-  padding: 20px 28px;
+  padding: 16px 48px;
 
   ${color}
   ${border}
@@ -17,6 +17,7 @@ const Button = ({
   link,
   children,
   onClick,
+  color,
   borderColor,
   backgroundColor,
   shape,
@@ -26,6 +27,7 @@ const Button = ({
       <a href={link}>
         <StyledButton
           borderColor={borderColor}
+          color={color}
           backgroundColor={backgroundColor}
           borderRadius={shape === 'rounded' ? 1 : 0}
         >
@@ -36,7 +38,11 @@ const Button = ({
   }
 
   return (
-    <StyledButton onClick={onClick} backgroundColor={backgroundColor}>
+    <StyledButton
+      onClick={onClick}
+      backgroundColor={backgroundColor}
+      color={color}
+    >
       {children}
     </StyledButton>
   );
@@ -49,11 +55,13 @@ Button.propTypes = {
   borderColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   shape: PropTypes.string,
+  color: PropTypes.string,
 };
 
 Button.defaultProps = {
-  backgroundColor: '#F7F7F8;',
-  borderColor: '#000',
+  backgroundColor: 'primary',
+  color: '#FFF',
+  borderColor: 'primary',
   shape: 'rounded',
 };
 
