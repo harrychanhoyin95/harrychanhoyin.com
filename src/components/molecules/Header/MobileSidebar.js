@@ -61,6 +61,8 @@ const Logo = styled(Img)`
   right: 32px;
   height: 32px;
   width: 32px;
+
+  ${layout}
 `;
 
 const MobileSidebar = ({
@@ -93,7 +95,11 @@ const MobileSidebar = ({
         <BurgerBar top={'40%'} />
         <BurgerBar top={'80%'} />
       </BurgerButton>
-      <Logo fluid={imageData} style={{ position: 'absolute' }} />
+      <Logo
+        fluid={imageData}
+        style={{ position: 'absolute' }}
+        display={display}
+      />
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
         <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">
           &times;

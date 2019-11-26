@@ -27,8 +27,13 @@ const Logo = styled(Img)`
 
 const MenuItem = styled.div`
   cursor: pointer;
+  transition: all 0.3s;
 
   ${space}
+
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 const DesktopHeader = ({ headerItems, display }) => {
