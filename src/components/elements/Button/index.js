@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { color, border, space } from 'styled-system';
+import { color, border, space, layout } from 'styled-system';
+
+const Anchor = styled.a`
+  width: 100%;
+`;
 
 const StyledButton = styled.button`
   cursor: pointer;
   border: 1px solid;
-  padding: 16px 48px;
+  padding: 16px 20px;
+  font-weight: bold;
+  height: 100%;
 
   ${color}
   ${border}
   ${space}
+  ${layout}
 `;
 
 const Button = ({
@@ -21,19 +28,22 @@ const Button = ({
   borderColor,
   backgroundColor,
   shape,
+  width,
+  inverted,
 }) => {
   if (link) {
     return (
-      <a href={link}>
+      <Anchor href={link}>
         <StyledButton
-          borderColor={borderColor}
-          color={color}
-          backgroundColor={backgroundColor}
+          borderColor={inverted ? borderColor : color}
+          color={inverted ? borderColor : color}
+          backgroundColor={inverted ? color : backgroundColor}
           borderRadius={shape === 'rounded' ? 1 : 0}
+          width={width}
         >
           {children}
         </StyledButton>
-      </a>
+      </Anchor>
     );
   }
 
@@ -42,6 +52,7 @@ const Button = ({
       onClick={onClick}
       backgroundColor={backgroundColor}
       color={color}
+      width={width}
     >
       {children}
     </StyledButton>
@@ -56,6 +67,8 @@ Button.propTypes = {
   backgroundColor: PropTypes.string,
   shape: PropTypes.string,
   color: PropTypes.string,
+  width: PropTypes.string,
+  inverted: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -63,6 +76,7 @@ Button.defaultProps = {
   color: '#FFF',
   borderColor: 'primary',
   shape: 'rounded',
+  width: '100%',
 };
 
 export default Button;

@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
     font-feature-settings: 'tnum', "tnum";
     transition: 0.3s all;
     text-rendering: optimizeLegibility;
+    line-height: 24px;
   }
 `;
 

@@ -5,7 +5,8 @@ import Layout from '../components/layout';
 import theme from '../theme';
 import GlobalStyle from '../globalStyle';
 import Section from '../components/elements/Section';
-import AboutSection from '../components/sections/AboutSection';
+import OpeningSection from '../components/sections/OpeningSection';
+import AboutMeSection from '../components/sections/AboutMeSection';
 import ExperienceSection from '../components/sections/ExperienceSection';
 
 const IndexPage = () => {
@@ -15,7 +16,8 @@ const IndexPage = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
-        <AboutSection />
+        <OpeningSection />
+        <AboutMeSection />
         <ExperienceSection />
         <Section>Projects</Section>
         <Section>Contact</Section>

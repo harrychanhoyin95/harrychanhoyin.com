@@ -2,8 +2,6 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { layout, color, space } from 'styled-system';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import BurgerBar from './BurgerBar';
 import Flex from '../../elements/Flex';
@@ -14,19 +12,6 @@ const BurgerButton = styled.div`
   left: 32px;
   height: 24px;
   width: 32px;
-
-  ${layout}
-`;
-
-const DarkModeToggle = styled(FontAwesomeIcon)`
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  height: 24px;
-
-  && {
-    width: 32px;
-  }
 
   ${layout}
 `;
@@ -82,11 +67,6 @@ const MobileSidebar = ({
         <BurgerBar top={'40%'} />
         <BurgerBar top={'80%'} />
       </BurgerButton>
-      <DarkModeToggle
-        icon={faMoon}
-        display={display}
-        onClick={() => console.log('Toggle')}
-      />
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
         <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">
           &times;

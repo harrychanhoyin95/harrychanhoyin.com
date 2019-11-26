@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, layout } from 'styled-system';
 
-import ToggleSwitch from '../../elements/ToggleSwitch';
-
 const Nav = styled.nav`
   ${layout}
 `;
@@ -31,9 +29,6 @@ const DesktopHeader = ({ headerItems, display }) => {
             </MenuItem>
           );
         })}
-        <MenuItem padding={4}>
-          <ToggleSwitch onChange={() => console.log('toggled')} />
-        </MenuItem>
       </Menu>
     </Nav>
   );

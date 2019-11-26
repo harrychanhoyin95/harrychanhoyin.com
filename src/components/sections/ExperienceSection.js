@@ -21,6 +21,10 @@ const ProjectContainer = styled.div`
   ${color}
 `;
 
+const BoldText = styled(P)`
+  font-weight: bold;
+`;
+
 const ExperienceSection = () => {
   const data = useStaticQuery(graphql`
     query ExperienceSectionQuery {
@@ -49,7 +53,7 @@ const ExperienceSection = () => {
   const experiences = get(data, 'allContentfulExperience.edges', null);
 
   return (
-    <Section>
+    <Section bg="sectionColor">
       <SectionHeading>Experience</SectionHeading>
       {experiences.map(experience => {
         const job = get(experience, 'node', null);
@@ -71,16 +75,18 @@ const ExperienceSection = () => {
                     flexDirection={'column'}
                     width={['100%', '50%']}
                   >
-                    <P fontWeight={'bold'} mb={2}>
+                    <BoldText color="heading" mb={2}>
                       {job.companyName}
-                    </P>
-                    <P mb={0}>{job.employmentPosition}</P>
+                    </BoldText>
+                    <BoldText color="heading" mb={0}>
+                      {job.employmentPosition}
+                    </BoldText>
                   </Flex>
-                  <P fontStyle={'italic'} color={'greyText'} ml={[0, 'auto']}>
+                  <P fontStyle={'italic'} ml={[0, 'auto']}>
                     {job.employmentPeriod}
                   </P>
                 </Flex>
-                <ProjectContainer color={'greyText'}>
+                <ProjectContainer>
                   {job.projects.map(project => {
                     return (
                       <Flex key={project.client} flexDirection={'column'}>

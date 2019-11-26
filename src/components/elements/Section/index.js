@@ -15,7 +15,7 @@ const Section = ({ children, margin, width, bg }) => {
   return (
     <StyledSection
       margin={margin}
-      px={[4, 5]}
+      px={[4, 7]}
       pt={[4, 5]}
       width={width}
       bg={bg}

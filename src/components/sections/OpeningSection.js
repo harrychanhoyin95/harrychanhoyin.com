@@ -20,15 +20,17 @@ const AboutSection = () => {
   return (
     <Section pt={[3, 5]} bg="sectionColor">
       <Container width={['100%', '60%']}>
-        <SectionHeading>Harry Chan</SectionHeading>
-        <Introduction mb={5}>
-          A self-motivated software engineer who seeks to leverage my skills
-          particularly in ReactJS into a workplace environment, and anticipates
-          to challenge myself as a better software engineer along my career
-          path.
+        <SectionHeading>I&apos;m Harry</SectionHeading>
+        <Introduction mb={3} color="subHeading">
+          Web-application software engineer
         </Introduction>
-        <Flex>
-          <Button link={'mailto:harrychanhoyin95@gmail.com'}>Hire Me</Button>
+        <Flex width={'50%'}>
+          <Button
+            link={'mailto:harrychanhoyin95@gmail.com'}
+            width={['100%', '50%']}
+          >
+            Hire Me
+          </Button>
         </Flex>
       </Container>
     </Section>

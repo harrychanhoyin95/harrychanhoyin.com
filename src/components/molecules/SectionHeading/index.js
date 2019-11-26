@@ -1,18 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Heading from '../../elements/Heading';
 
-const SectionHeading = ({ children }) => {
+const StyledHeading = styled(Heading)`
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: ${props => (props.overlay ? '30%' : '10%')};
+    height: 2px;
+    bottom: -24px;
+    background-color: #9147ff;
+  }
+`;
+
+const SectionHeading = ({ children, overlay }) => {
   return (
-    <Heading level={1} fontSize={40} mt={0} mb={3}>
+    <StyledHeading level={1} fontSize={40} mt={0} mb={5} overlay={overlay}>
       {children}
-    </Heading>
+    </StyledHeading>
   );
 };
 
 SectionHeading.propTypes = {
   children: PropTypes.node.isRequired,
+  overlay: PropTypes.bool,
 };
 
 export default SectionHeading;
