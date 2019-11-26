@@ -8,7 +8,6 @@ import Section from '../elements/Section';
 import Card from '../elements/Card';
 import Flex from '../elements/Flex';
 import Icon from '../elements/Icon';
-import Text from '../elements/Text';
 import P from '../elements/P';
 import SectionHeading from '../molecules/SectionHeading';
 
@@ -18,26 +17,8 @@ const LogoContainer = styled.a`
   ${layout}
 `;
 
-const CompanyName = styled(Text)`
-  margin-bottom: 8px;
-  font-weight: bold;
-`;
-
-const EmploymentPeriod = styled(Text)`
-  font-style: italic;
-`;
-
 const ProjectContainer = styled.div`
   ${color}
-`;
-
-const ProjectName = styled(P)`
-  margin-bottom: 4px;
-  font-weight: bold;
-`;
-
-const ProjectDescription = styled(P)`
-  margin-bottom: 16px;
 `;
 
 const ExperienceSection = () => {
@@ -90,21 +71,23 @@ const ExperienceSection = () => {
                     flexDirection={'column'}
                     width={['100%', '50%']}
                   >
-                    <CompanyName>{job.companyName}</CompanyName>
-                    {job.employmentPosition}
+                    <P fontWeight={'bold'} mb={2}>
+                      {job.companyName}
+                    </P>
+                    <P mb={0}>{job.employmentPosition}</P>
                   </Flex>
-                  <EmploymentPeriod color={'greyText'} ml={[0, 'auto']}>
+                  <P fontStyle={'italic'} color={'greyText'} ml={[0, 'auto']}>
                     {job.employmentPeriod}
-                  </EmploymentPeriod>
+                  </P>
                 </Flex>
                 <ProjectContainer color={'greyText'}>
                   {job.projects.map(project => {
                     return (
                       <Flex key={project.client} flexDirection={'column'}>
-                        <ProjectName>{project.client}</ProjectName>
-                        <ProjectDescription>
-                          {project.description}
-                        </ProjectDescription>
+                        <P fontWeight={'bold'} mb={1}>
+                          {project.client}
+                        </P>
+                        <P mb={3}>{project.description}</P>
                       </Flex>
                     );
                   })}
