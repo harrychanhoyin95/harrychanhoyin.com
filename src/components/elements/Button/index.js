@@ -54,7 +54,7 @@ const Button = ({
 
   if (link) {
     return (
-      <Anchor href={link}>
+      <Anchor href={link} target={'_blank'} rel={'noopener noreferrer'}>
         <StyledButton
           borderColor={borderColor}
           color={inverted ? borderColor : color}
@@ -75,6 +75,7 @@ const Button = ({
       backgroundColor={backgroundColor}
       color={color}
       width={width}
+      borderRadius={shape === 'rounded' ? 1 : 0}
       {...props}
     >
       {children}

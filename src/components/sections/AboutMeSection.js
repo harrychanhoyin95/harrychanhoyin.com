@@ -9,6 +9,8 @@ import Flex from '../elements/Flex';
 import Button from '../elements/Button';
 import P from '../elements/P';
 import SectionHeading from '../molecules/SectionHeading';
+import scrollTo from '../../utils/scroller';
+import CV from '../../assets/CV-HarryChan.pdf';
 
 const ButtonContainer = styled.div`
   display: grid;
@@ -70,10 +72,8 @@ const AboutMeSection = () => {
             along my career path.
           </P>
           <ButtonContainer>
-            <Button link={'mailto:harrychanhoyin95@gmail.com'}>
-              View Works
-            </Button>
-            <Button link={'mailto:harrychanhoyin95@gmail.com'} inverted>
+            <Button onClick={() => scrollTo('project')}>View Works</Button>
+            <Button link={CV} inverted>
               Download Resume
             </Button>
           </ButtonContainer>
