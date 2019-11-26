@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, layout } from 'styled-system';
+import startCase from 'lodash/startCase';
+
+import scrollTo from '../../../utils/scroller';
 
 const Nav = styled.nav`
   ${layout}
@@ -15,6 +18,8 @@ const Menu = styled.div`
 `;
 
 const MenuItem = styled.div`
+  cursor: pointer;
+
   ${space}
 `;
 
@@ -23,9 +28,10 @@ const DesktopHeader = ({ headerItems, display }) => {
     <Nav display={display}>
       <Menu mx={3}>
         {headerItems.map(item => {
+          console.log('item', item);
           return (
-            <MenuItem key={item} padding={4}>
-              {item}
+            <MenuItem key={item} padding={4} onClick={() => scrollTo(item)}>
+              {startCase(item)}
             </MenuItem>
           );
         })}

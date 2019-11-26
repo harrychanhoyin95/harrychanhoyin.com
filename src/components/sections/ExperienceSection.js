@@ -53,7 +53,7 @@ const ExperienceSection = () => {
   const experiences = get(data, 'allContentfulExperience.edges', null);
 
   return (
-    <Section bg="sectionColor">
+    <Section bg={'sectionColor'} name={'experience'}>
       <SectionHeading>Experience</SectionHeading>
       {experiences.map(experience => {
         const job = get(experience, 'node', null);

@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { space, layout, color } from 'styled-system';
+import { Element } from 'react-scroll';
 
 const StyledSection = styled.section`
   padding-bottom: 128px;
@@ -11,7 +12,7 @@ const StyledSection = styled.section`
   ${color}
 `;
 
-const Section = ({ children, margin, width, bg }) => {
+const Section = ({ children, margin, width, bg, name, ...props }) => {
   return (
     <StyledSection
       margin={margin}
@@ -19,8 +20,9 @@ const Section = ({ children, margin, width, bg }) => {
       pt={[4, 5]}
       width={width}
       bg={bg}
+      {...props}
     >
-      {children}
+      <Element name={name}>{children}</Element>
     </StyledSection>
   );
 };
@@ -34,6 +36,7 @@ Section.propTypes = {
     PropTypes.array,
   ]),
   bg: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default Section;

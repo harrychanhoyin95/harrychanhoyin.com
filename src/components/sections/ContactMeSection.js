@@ -38,7 +38,7 @@ const Anchor = styled.a`
 
 const ContactMeSection = () => {
   return (
-    <Section bg={'sectionColor'}>
+    <Section bg={'sectionColor'} name={'contactMe'}>
       <SectionHeading center>Get In Touch</SectionHeading>
       <P textAlign={'center'}>
         if you have anything in mind, feel free to contact me through the

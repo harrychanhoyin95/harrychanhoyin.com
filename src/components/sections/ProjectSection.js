@@ -69,7 +69,7 @@ const ProjectSection = () => {
   const projectData = get(data, 'allContentfulProject.edges', null);
 
   return (
-    <Section>
+    <Section name={'project'}>
       <SectionHeader>Projects</SectionHeader>
       <Grid gridTemplateColumns={['1fr', '1fr 1fr 1fr']}>
         {projectData.map(project => {

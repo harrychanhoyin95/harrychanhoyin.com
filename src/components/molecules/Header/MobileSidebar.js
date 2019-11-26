@@ -2,9 +2,11 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { layout, color, space } from 'styled-system';
+import startCase from 'lodash/startCase';
 
 import BurgerBar from './BurgerBar';
 import Flex from '../../elements/Flex';
+import scrollTo from '../../../utils/scroller';
 
 const BurgerButton = styled.div`
   position: absolute;
@@ -12,6 +14,7 @@ const BurgerButton = styled.div`
   left: 32px;
   height: 24px;
   width: 32px;
+  cursor: pointer;
 
   ${layout}
 `;
@@ -74,8 +77,8 @@ const MobileSidebar = ({
         <Flex flexDirection={'column'}>
           {headerItems.map(item => {
             return (
-              <MenuItem key={item} py={3}>
-                {item}
+              <MenuItem key={item} py={3} onClick={() => scrollTo(item)}>
+                {startCase(item)}
               </MenuItem>
             );
           })}

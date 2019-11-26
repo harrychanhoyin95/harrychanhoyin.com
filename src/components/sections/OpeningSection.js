@@ -18,7 +18,7 @@ const Container = styled.div`
 
 const AboutSection = () => {
   return (
-    <Section pt={[3, 5]} bg="sectionColor">
+    <Section pt={[4, 5]} bg={'sectionColor'} name={'opening'}>
       <Container width={['100%', '60%']}>
         <SectionHeading>I&apos;m Harry</SectionHeading>
         <Introduction mb={3} color="subHeading">

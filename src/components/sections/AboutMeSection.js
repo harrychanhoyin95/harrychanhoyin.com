@@ -54,7 +54,7 @@ const AboutMeSection = () => {
   const imageData = data.desktop.childImageSharp.fluid;
 
   return (
-    <Section>
+    <Section name={'aboutMe'}>
       <Flex flexDirection={['column', 'row']}>
         <ImageContainer width={['100%', '50%']}>
           <Image fluid={imageData} />
