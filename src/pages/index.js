@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <GlobalStyle sidebarOpen={sidebarOpen} />
       <Layout sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}>
         <OpeningSection />
         <AboutMeSection />

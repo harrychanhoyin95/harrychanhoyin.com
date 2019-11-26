@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background-color: #FFF;
+    overflow: ${props => (props.sidebarOpen ? 'hidden' : 'unset')};
   }
 
   *, *::after, *::before {

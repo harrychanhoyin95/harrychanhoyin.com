@@ -75,10 +75,10 @@ const ExperienceSection = () => {
                     flexDirection={'column'}
                     width={['100%', '50%']}
                   >
-                    <BoldText color="heading" mb={2}>
+                    <BoldText color={'heading'} mb={2}>
                       {job.companyName}
                     </BoldText>
-                    <BoldText color="heading" mb={0}>
+                    <BoldText color={'heading'} mb={0}>
                       {job.employmentPosition}
                     </BoldText>
                   </Flex>

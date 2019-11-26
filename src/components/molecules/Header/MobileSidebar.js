@@ -19,7 +19,7 @@ const BurgerButton = styled.div`
 const Nav = styled.nav`
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
   width: ${props => (props.sidebarOpen ? '60%' : '0')};
   position: fixed;
   top: 0;
@@ -34,8 +34,8 @@ const Nav = styled.nav`
 
 const CloseBtn = styled.div`
   position: absolute;
-  top: 4px;
-  right: 24px;
+  top: 32px;
+  right: 32px;
   font-size: 48px;
   margin-left: 50px;
   cursor: pointer;
