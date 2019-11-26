@@ -22,8 +22,8 @@ const Flex = ({ children, flexDirection, width, ...props }) => {
 
 Flex.propTypes = {
   children: PropTypes.node.isRequired,
-  flexDirection: PropTypes.string,
-  width: PropTypes.string,
+  flexDirection: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 Flex.defaultProps = {

@@ -49,7 +49,7 @@ const ExperienceSection = () => {
   const experiences = get(data, 'allContentfulExperience.edges', null);
 
   return (
-    <Section px={[0, 5]} pb={[2, 4]}>
+    <Section>
       <SectionHeading>Experience</SectionHeading>
       {experiences.map(experience => {
         const job = get(experience, 'node', null);

@@ -55,7 +55,7 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
         setSidebarOpen={setSidebarOpen}
         {...props}
       />
-      <Content sidebarOpen={sidebarOpen} pt={[6, 0]} px={[4, 5]}>
+      <Content sidebarOpen={sidebarOpen} pt={[6, 0]}>
         {children}
       </Content>
       <Overlay

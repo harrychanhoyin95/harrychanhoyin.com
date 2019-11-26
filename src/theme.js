@@ -2,6 +2,8 @@ const theme = {
   breakpoints: ['768px', '1024px'],
   colors: {
     primary: '#9147FF',
+    header: '#FFF',
+    sectionColor: '#FAFAFA',
     text: '#0D0D10',
     greyText: '#5e5e5e',
     sidebar: '#EFEFF1',

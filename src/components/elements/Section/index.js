@@ -1,18 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, layout } from 'styled-system';
+import { space, layout, color } from 'styled-system';
 
 const StyledSection = styled.section`
   padding-bottom: 128px;
 
   ${space}
   ${layout}
+  ${color}
 `;
 
-const Section = ({ children, margin, px, py, pt, width }) => {
+const Section = ({ children, margin, width, bg }) => {
   return (
-    <StyledSection margin={margin} px={px} py={py} pt={pt} width={width}>
+    <StyledSection
+      margin={margin}
+      px={[4, 5]}
+      pt={[4, 5]}
+      width={width}
+      bg={bg}
+    >
       {children}
     </StyledSection>
   );
@@ -21,14 +28,12 @@ const Section = ({ children, margin, px, py, pt, width }) => {
 Section.propTypes = {
   children: PropTypes.node.isRequired,
   margin: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
-  px: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
-  py: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
-  pt: PropTypes.oneOfType([PropTypes.array, PropTypes.number]),
   width: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
     PropTypes.array,
   ]),
+  bg: PropTypes.string,
 };
 
 export default Section;
