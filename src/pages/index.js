@@ -8,6 +8,7 @@ import Section from '../components/elements/Section';
 import OpeningSection from '../components/sections/OpeningSection';
 import AboutMeSection from '../components/sections/AboutMeSection';
 import ExperienceSection from '../components/sections/ExperienceSection';
+import ProjectSection from '../components/sections/ProjectSection';
 
 const IndexPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -19,7 +20,7 @@ const IndexPage = () => {
         <OpeningSection />
         <AboutMeSection />
         <ExperienceSection />
-        <Section>Projects</Section>
+        <ProjectSection />
         <Section>Contact</Section>
       </Layout>
     </ThemeProvider>

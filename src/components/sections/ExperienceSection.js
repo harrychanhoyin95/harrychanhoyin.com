@@ -90,9 +90,7 @@ const ExperienceSection = () => {
                   {job.projects.map(project => {
                     return (
                       <Flex key={project.client} flexDirection={'column'}>
-                        <P fontWeight={'bold'} mb={1}>
-                          {project.client}
-                        </P>
+                        <P mb={1}>{project.client}</P>
                         <P mb={3}>{project.description}</P>
                       </Flex>
                     );
