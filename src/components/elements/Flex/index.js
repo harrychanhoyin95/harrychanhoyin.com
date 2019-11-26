@@ -12,9 +12,14 @@ const Div = styled.div`
   ${layout}
 `;
 
-const Flex = ({ children, flexDirection, width, ...props }) => {
+const Flex = ({ children, flexDirection, width, justifyContent, ...props }) => {
   return (
-    <Div flexDirection={flexDirection} width={width} {...props}>
+    <Div
+      flexDirection={flexDirection}
+      width={width}
+      justifyContent={justifyContent}
+      {...props}
+    >
       {children}
     </Div>
   );
@@ -24,6 +29,7 @@ Flex.propTypes = {
   children: PropTypes.node.isRequired,
   flexDirection: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
+  justifyContent: PropTypes.string,
 };
 
 Flex.defaultProps = {

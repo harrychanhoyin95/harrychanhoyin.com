@@ -11,13 +11,22 @@ const StyledP = styled.p`
   ${color}
 `;
 
-const P = ({ children, fontWeight, fontSize, mb, color, ...props }) => {
+const P = ({
+  children,
+  fontWeight,
+  fontSize,
+  mb,
+  color,
+  textAlign,
+  ...props
+}) => {
   return (
     <StyledP
       fontWeight={fontWeight}
       mb={mb}
       fontSize={fontSize}
       color={color}
+      textAlign={textAlign}
       {...props}
     >
       {children}
@@ -31,6 +40,7 @@ P.propTypes = {
   fontSize: PropTypes.number,
   mb: PropTypes.number,
   color: PropTypes.string,
+  textAlign: PropTypes.string,
 };
 
 P.defaultProps = {

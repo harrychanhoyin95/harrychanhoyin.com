@@ -12,7 +12,6 @@ import styled from 'styled-components';
 import { space } from 'styled-system';
 
 import Header from './molecules/Header';
-import Footer from './footer';
 
 const Content = styled.main`
   margin-left: ${props => (props.sidebarOpen ? '60%' : '0')};
@@ -62,7 +61,6 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
         sidebarOpen={sidebarOpen}
         onClick={() => setSidebarOpen(!sidebarOpen)}
       />
-      <Footer />
     </Fragment>
   );
 };

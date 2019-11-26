@@ -7,6 +7,7 @@ const theme = {
     text: '#999CA6',
     sectionColor: '#FAFAFA',
     // buttonInvertedBg: ''
+    socialIcon: '#FFF',
     sidebar: '#EFEFF1',
   },
   space: [0, 4, 8, 16, 32, 64, 96, 128, 256, 512],

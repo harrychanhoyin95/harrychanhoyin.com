@@ -4,11 +4,11 @@ import { ThemeProvider } from 'styled-components';
 import Layout from '../components/layout';
 import theme from '../theme';
 import GlobalStyle from '../globalStyle';
-import Section from '../components/elements/Section';
 import OpeningSection from '../components/sections/OpeningSection';
 import AboutMeSection from '../components/sections/AboutMeSection';
 import ExperienceSection from '../components/sections/ExperienceSection';
 import ProjectSection from '../components/sections/ProjectSection';
+import ContactMeSection from '../components/sections/ContactMeSection';
 
 const IndexPage = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -21,7 +21,7 @@ const IndexPage = () => {
         <AboutMeSection />
         <ExperienceSection />
         <ProjectSection />
-        <Section>Contact</Section>
+        <ContactMeSection />
       </Layout>
     </ThemeProvider>
   );
