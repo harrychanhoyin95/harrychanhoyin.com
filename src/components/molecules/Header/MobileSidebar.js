@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { layout, color, space } from 'styled-system';
 import startCase from 'lodash/startCase';
+import { useStaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import BurgerBar from './BurgerBar';
 import Flex from '../../elements/Flex';
@@ -54,12 +56,33 @@ const MenuItem = styled.div`
   ${space}
 `;
 
+const Logo = styled(Img)`
+  top: 32px;
+  right: 32px;
+  height: 32px;
+  width: 32px;
+`;
+
 const MobileSidebar = ({
   headerItems,
   display,
   sidebarOpen,
   setSidebarOpen,
 }) => {
+  const data = useStaticQuery(graphql`
+    query MobileHeaderQuery {
+      desktop: file(relativePath: { eq: "logo_transparent.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500) {
+            ...GatsbyImageSharpFluid_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  const imageData = data.desktop.childImageSharp.fluid;
+
   return (
     <Fragment>
       <BurgerButton
@@ -70,6 +93,7 @@ const MobileSidebar = ({
         <BurgerBar top={'40%'} />
         <BurgerBar top={'80%'} />
       </BurgerButton>
+      <Logo fluid={imageData} style={{ position: 'absolute' }} />
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
         <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">
           &times;

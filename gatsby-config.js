@@ -25,18 +25,18 @@ module.exports = {
         accessToken: `AZm-X_E3N_VuAlUcXh3CmhYM-dtntBOJ8VqdHPuB9cI`,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-manifest',
-    //   options: {
-    //     name: 'gatsby-starter-default',
-    //     short_name: 'starter',
-    //     start_url: '/',
-    //     background_color: '#663399',
-    //     theme_color: '#663399',
-    //     display: 'minimal-ui',
-    //     icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'harry-chan-ho-yin-95',
+        short_name: 'harry-chan',
+        start_url: '/',
+        background_color: '#FFF',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/images/logo_transparent.png', // This path is relative to the root of the site.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
