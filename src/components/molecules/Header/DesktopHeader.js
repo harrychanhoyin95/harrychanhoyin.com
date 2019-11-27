@@ -13,7 +13,13 @@ import scrollTo from '../../../utils/scroller';
 import 'antd/es/switch/style/index.css';
 
 const Nav = styled.nav`
+  transition: 0.3s all;
+  position: fixed;
+  top: ${props => (props.headerShow ? '0' : '-100px')};
+  width: 100%;
+
   ${layout}
+  ${color}
 `;
 
 const Menu = styled.div`
@@ -69,7 +75,13 @@ const ToggleButton = styled(Switch)`
   ${space}
 `;
 
-const DesktopHeader = ({ headerItems, display, dark, toggleDark }) => {
+const DesktopHeader = ({
+  headerItems,
+  display,
+  dark,
+  toggleDark,
+  headerShow,
+}) => {
   const data = useStaticQuery(graphql`
     query DesktopHeaderQuery {
       desktop: file(relativePath: { eq: "logo_transparent.png" }) {
@@ -85,7 +97,7 @@ const DesktopHeader = ({ headerItems, display, dark, toggleDark }) => {
   const imageData = data.desktop.childImageSharp.fluid;
 
   return (
-    <Nav display={display}>
+    <Nav display={display} bg={'header'} headerShow={headerShow}>
       <Menu mx={3}>
         <Logo fluid={imageData} />
         {headerItems.map(item => {
@@ -114,6 +126,7 @@ DesktopHeader.propTypes = {
   display: PropTypes.array,
   dark: PropTypes.bool,
   toggleDark: PropTypes.func,
+  headerShow: PropTypes.bool,
 };
 
 export default DesktopHeader;

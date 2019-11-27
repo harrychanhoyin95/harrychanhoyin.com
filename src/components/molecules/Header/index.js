@@ -1,39 +1,54 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 
 import DesktopHeader from './DesktopHeader';
 import MobileSidebar from './MobileSidebar';
+import HeaderContext from '../../../context/HeaderContext';
 
 const Header = ({ ...props }) => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      allContentfulHeader {
-        edges {
-          node {
-            headerItems {
-              items
+  return (
+    <StaticQuery
+      query={graphql`
+        query HeaderQuery {
+          allContentfulHeader {
+            edges {
+              node {
+                headerItems {
+                  items
+                }
+              }
             }
           }
         }
-      }
-    }
-  `);
-
-  const headerItems = data.allContentfulHeader.edges[0].node.headerItems.items;
-
-  return (
-    <header>
-      <DesktopHeader
-        headerItems={headerItems}
-        display={['none', 'block']}
-        {...props}
-      />
-      <MobileSidebar
-        headerItems={headerItems}
-        display={['flex', 'none']}
-        {...props}
-      />
-    </header>
+      `}
+      render={data => {
+        const headerItems =
+          data.allContentfulHeader.edges[0].node.headerItems.items;
+        return (
+          <HeaderContext.Consumer>
+            {header => {
+              const { headerShow } = header;
+              return (
+                <header>
+                  <DesktopHeader
+                    headerItems={headerItems}
+                    display={['none', 'block']}
+                    headerShow={headerShow}
+                    {...props}
+                  />
+                  <MobileSidebar
+                    headerItems={headerItems}
+                    display={['flex', 'none']}
+                    headerShow={headerShow}
+                    {...props}
+                  />
+                </header>
+              );
+            }}
+          </HeaderContext.Consumer>
+        );
+      }}
+    />
   );
 };
 

@@ -12,6 +12,7 @@ const theme = {
     burgerButton: '#373a47',
     buttonText: '#FFF',
     borderColor: '#9147FF',
+    header: '#EFEFF1',
     modes: {
       dark: {
         primary: '#000',
@@ -25,6 +26,7 @@ const theme = {
         burgerButton: '#DEDEE3',
         buttonText: '#AAAAB5',
         borderColor: '#AAAAB5',
+        header: '#1E1E23',
       },
     },
   },

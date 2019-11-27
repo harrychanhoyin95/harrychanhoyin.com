@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+
 const defaultState = {
   sidebarOpen: false,
   toggleSidebarOpen: () => {},
@@ -12,7 +13,6 @@ class SidebarProvider extends React.Component {
   };
   toggleSidebarOpen = () => {
     let sidebarOpen = !this.state.sidebarOpen;
-    console.log('sidebarOpen', sidebarOpen);
     this.setState({ sidebarOpen });
   };
   render() {

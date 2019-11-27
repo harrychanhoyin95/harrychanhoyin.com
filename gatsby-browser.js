@@ -2,6 +2,7 @@
 import React from 'react';
 import { DarkModeProvider } from './src/context/DarkModeContext';
 import { SidebarProvider } from './src/context/SidebarContext';
+import { HeaderShowProvider } from './src/context/HeaderContext';
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -12,6 +13,8 @@ export const onClientEntry = () => {
 
 export const wrapRootElement = ({ element }) => (
   <DarkModeProvider>
-    <SidebarProvider>{element}</SidebarProvider>
+    <SidebarProvider>
+      <HeaderShowProvider>{element}</HeaderShowProvider>
+    </SidebarProvider>
   </DarkModeProvider>
 );

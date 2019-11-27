@@ -38,7 +38,6 @@ const Nav = styled.nav`
   overflow-x: hidden;
   transition: all 0.3s;
 
-  ${layout}
   ${color}
 `;
 
@@ -67,8 +66,6 @@ const Logo = styled(Img)`
   right: 32px;
   height: 32px;
   width: 32px;
-
-  ${layout}
 `;
 
 const SwitchWrapper = styled.div`
@@ -99,6 +96,16 @@ const ToggleButton = styled(Switch)`
   }
 `;
 
+const FixedNav = styled.div`
+  position: fixed;
+  width: 100%;
+  top: ${props => (props.headerShow ? '0' : '-100px')};
+  transition: 0.3s all;
+
+  ${layout}
+  ${color}
+`;
+
 const MobileSidebar = ({
   headerItems,
   display,
@@ -106,6 +113,7 @@ const MobileSidebar = ({
   toggleSidebarOpen,
   dark,
   toggleDark,
+  headerShow,
 }) => {
   const data = useStaticQuery(graphql`
     query MobileHeaderQuery {
@@ -123,20 +131,19 @@ const MobileSidebar = ({
 
   return (
     <Fragment>
-      <BurgerButton
+      <FixedNav
+        headerShow={headerShow}
+        height={96}
+        bg={'header'}
         display={display}
-        onClick={() => toggleSidebarOpen()}
-        color="burgerButton"
       >
-        <BurgerBar top={'0'} />
-        <BurgerBar top={'40%'} />
-        <BurgerBar top={'80%'} />
-      </BurgerButton>
-      <Logo
-        fluid={imageData}
-        style={{ position: 'absolute' }}
-        display={display}
-      />
+        <BurgerButton onClick={() => toggleSidebarOpen()} color="burgerButton">
+          <BurgerBar top={'0'} />
+          <BurgerBar top={'40%'} />
+          <BurgerBar top={'80%'} />
+        </BurgerButton>
+        <Logo fluid={imageData} style={{ position: 'absolute' }} />
+      </FixedNav>
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
         <CloseBtn onClick={() => toggleSidebarOpen()} color="text">
           &times;
@@ -171,6 +178,7 @@ MobileSidebar.propTypes = {
   toggleSidebarOpen: PropTypes.func,
   dark: PropTypes.bool,
   toggleDark: PropTypes.func,
+  headerShow: PropTypes.bool,
 };
 
 export default MobileSidebar;
