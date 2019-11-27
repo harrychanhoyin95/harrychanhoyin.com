@@ -17,6 +17,7 @@ const Nav = styled.nav`
   position: fixed;
   top: ${props => (props.headerShow ? '0' : '-100px')};
   width: 100%;
+  z-index: 99;
 
   ${layout}
   ${color}
