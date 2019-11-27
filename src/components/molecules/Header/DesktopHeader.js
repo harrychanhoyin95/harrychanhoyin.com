@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { space, layout } from 'styled-system';
+import { space, layout, color } from 'styled-system';
 import startCase from 'lodash/startCase';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Switch } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import scrollTo from '../../../utils/scroller';
+import 'antd/es/switch/style/index.css';
 
 const Nav = styled.nav`
   ${layout}
@@ -30,13 +34,42 @@ const MenuItem = styled.div`
   transition: all 0.3s;
 
   ${space}
+  ${color}
 
   &:hover {
     opacity: 0.5;
   }
 `;
 
-const DesktopHeader = ({ headerItems, display }) => {
+const SwitchWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Moon = styled(FontAwesomeIcon)`
+  transition: all 0.3s;
+  height: 18px;
+
+  && {
+    width: 18px;
+  }
+
+  ${color}
+  ${space}
+`;
+
+const ToggleButton = styled(Switch)`
+  transition: all 0.3s;
+
+  &.ant-switch-checked {
+    background-color: #9147ff;
+  }
+
+  ${space}
+`;
+
+const DesktopHeader = ({ headerItems, display, dark, toggleDark }) => {
   const data = useStaticQuery(graphql`
     query DesktopHeaderQuery {
       desktop: file(relativePath: { eq: "logo_transparent.png" }) {
@@ -57,11 +90,20 @@ const DesktopHeader = ({ headerItems, display }) => {
         <Logo fluid={imageData} />
         {headerItems.map(item => {
           return (
-            <MenuItem key={item} padding={4} onClick={() => scrollTo(item)}>
+            <MenuItem
+              key={item}
+              padding={4}
+              color={'navText'}
+              onClick={() => scrollTo(item)}
+            >
               {startCase(item)}
             </MenuItem>
           );
         })}
+        <SwitchWrapper>
+          <Moon icon={faMoon} color={'heading'} mr={2} />
+          <ToggleButton onChange={() => toggleDark()} checked={dark} mr={3} />
+        </SwitchWrapper>
       </Menu>
     </Nav>
   );
@@ -70,6 +112,8 @@ const DesktopHeader = ({ headerItems, display }) => {
 DesktopHeader.propTypes = {
   headerItems: PropTypes.array,
   display: PropTypes.array,
+  dark: PropTypes.bool,
+  toggleDark: PropTypes.func,
 };
 
 export default DesktopHeader;

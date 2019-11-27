@@ -23,7 +23,11 @@ const Header = ({ ...props }) => {
 
   return (
     <header>
-      <DesktopHeader headerItems={headerItems} display={['none', 'block']} />
+      <DesktopHeader
+        headerItems={headerItems}
+        display={['none', 'block']}
+        {...props}
+      />
       <MobileSidebar
         headerItems={headerItems}
         display={['flex', 'none']}

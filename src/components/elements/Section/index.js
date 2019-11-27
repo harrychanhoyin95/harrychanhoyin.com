@@ -6,6 +6,7 @@ import { Element } from 'react-scroll';
 
 const StyledSection = styled.section`
   padding-bottom: 128px;
+  transition: 0.3s all;
 
   ${space}
   ${layout}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { position } from 'styled-system';
+import { position, color } from 'styled-system';
 
 const Bar = styled.span`
   position: absolute;
@@ -9,13 +9,13 @@ const Bar = styled.span`
   left: 0px;
   right: 0px;
   opacity: 1;
-  background-color: #373a47;
 
   ${position}
+  ${color}
 `;
 
 const BurgerBar = ({ top }) => {
-  return <Bar top={top}></Bar>;
+  return <Bar top={top} bg={'burgerButton'}></Bar>;
 };
 
 BurgerBar.propTypes = {

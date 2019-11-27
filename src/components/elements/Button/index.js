@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   padding: 16px 20px;
   font-weight: bold;
   height: 100%;
+  transition: 0.3s all;
 
   ${color}
   ${border}
@@ -21,6 +22,8 @@ const StyledButton = styled.button`
 `;
 
 const DisabledButton = styled(StyledButton)`
+  transition: 0.3s all;
+
   cursor: not-allowed;
 `;
 
@@ -56,8 +59,8 @@ const Button = ({
     return (
       <Anchor href={link} target={'_blank'} rel={'noopener noreferrer'}>
         <StyledButton
-          borderColor={borderColor}
-          color={inverted ? borderColor : color}
+          borderColor={'borderColor'}
+          color={inverted ? borderColor : 'buttonText'}
           backgroundColor={inverted ? color : backgroundColor}
           borderRadius={shape === 'rounded' ? 1 : 0}
           width={width}
@@ -73,6 +76,7 @@ const Button = ({
     <StyledButton
       onClick={onClick}
       backgroundColor={backgroundColor}
+      borderColor={'borderColor'}
       color={color}
       width={width}
       borderRadius={shape === 'rounded' ? 1 : 0}

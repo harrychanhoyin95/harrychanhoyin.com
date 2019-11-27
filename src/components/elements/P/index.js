@@ -5,6 +5,7 @@ import { space, typography, color } from 'styled-system';
 
 const StyledP = styled.p`
   margin-top: 0;
+  transition: 0.3s all;
 
   ${space}
   ${typography}

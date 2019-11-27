@@ -84,7 +84,7 @@ const ProjectSection = () => {
               <Image sizes={sizes} />
               <Flex flexDirection={'column'} px={3}>
                 <Heading level={4}>{pDetail.name}</Heading>
-                <P color={'#000'}>{pDetail.description}</P>
+                <P color={'heading'}>{pDetail.description}</P>
                 <P>Skills Used: {pDetail.techStack}</P>
               </Flex>
               <StyledFlex px={3} pb={3}>

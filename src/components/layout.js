@@ -5,13 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
+import styled, { ThemeProvider } from 'styled-components';
 import { space } from 'styled-system';
 
 import Header from './molecules/Header';
+import GlobalStyle from '../globalStyle';
+import getTheme from '../utils/getTheme';
+import DarkModeContext from '../context/DarkModeContext';
 
 const Content = styled.main`
   margin-left: ${props => (props.sidebarOpen ? '60%' : '0')};
@@ -36,32 +39,46 @@ const Overlay = styled.div`
 `;
 
 const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
-    <Fragment>
-      <Header
-        siteTitle={data.site.siteMetadata.title}
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-        {...props}
-      />
-      <Content sidebarOpen={sidebarOpen} pt={[6, 0]}>
-        {children}
-      </Content>
-      <Overlay
-        sidebarOpen={sidebarOpen}
-        onClick={() => setSidebarOpen(!sidebarOpen)}
-      />
-    </Fragment>
+    <StaticQuery
+      query={graphql`
+        query SiteTitleQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <DarkModeContext.Consumer>
+          {mode => {
+            const { dark, toggleDark } = mode;
+            const theme = getTheme(dark ? 'dark' : 'light');
+            return (
+              <ThemeProvider theme={theme}>
+                <GlobalStyle sidebarOpen={sidebarOpen} dark={dark} />
+                <Header
+                  siteTitle={data.site.siteMetadata.title}
+                  sidebarOpen={sidebarOpen}
+                  setSidebarOpen={setSidebarOpen}
+                  toggleDark={toggleDark}
+                  dark={dark}
+                  {...props}
+                />
+                <Content sidebarOpen={sidebarOpen} pt={[6, 0]}>
+                  {children}
+                </Content>
+                <Overlay
+                  sidebarOpen={sidebarOpen}
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                />
+              </ThemeProvider>
+            );
+          }}
+        </DarkModeContext.Consumer>
+      )}
+    />
   );
 };
 

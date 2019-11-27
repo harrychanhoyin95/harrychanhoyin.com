@@ -5,10 +5,14 @@ import { layout, color, space } from 'styled-system';
 import startCase from 'lodash/startCase';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { Switch } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import BurgerBar from './BurgerBar';
 import Flex from '../../elements/Flex';
 import scrollTo from '../../../utils/scroller';
+import 'antd/es/switch/style/index.css';
 
 const BurgerButton = styled.div`
   position: absolute;
@@ -19,6 +23,7 @@ const BurgerButton = styled.div`
   cursor: pointer;
 
   ${layout}
+  ${color}
 `;
 
 const Nav = styled.nav`
@@ -54,6 +59,7 @@ const MenuItem = styled.div`
   cursor: pointer;
 
   ${space}
+  ${color}
 `;
 
 const Logo = styled(Img)`
@@ -65,11 +71,41 @@ const Logo = styled(Img)`
   ${layout}
 `;
 
+const SwitchWrapper = styled.div`
+  position: absolute;
+  bottom: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Moon = styled(FontAwesomeIcon)`
+  transition: all 0.3s;
+  height: 18px;
+
+  && {
+    width: 18px;
+  }
+
+  ${color}
+  ${space}
+`;
+
+const ToggleButton = styled(Switch)`
+  transition: 0.3s all;
+
+  &.ant-switch-checked {
+    background-color: #9147ff;
+  }
+`;
+
 const MobileSidebar = ({
   headerItems,
   display,
   sidebarOpen,
   setSidebarOpen,
+  dark,
+  toggleDark,
 }) => {
   const data = useStaticQuery(graphql`
     query MobileHeaderQuery {
@@ -90,6 +126,7 @@ const MobileSidebar = ({
       <BurgerButton
         display={display}
         onClick={() => setSidebarOpen(!sidebarOpen)}
+        color="burgerButton"
       >
         <BurgerBar top={'0'} />
         <BurgerBar top={'40%'} />
@@ -107,12 +144,21 @@ const MobileSidebar = ({
         <Flex flexDirection={'column'}>
           {headerItems.map(item => {
             return (
-              <MenuItem key={item} py={3} onClick={() => scrollTo(item)}>
+              <MenuItem
+                key={item}
+                py={3}
+                color={'navText'}
+                onClick={() => scrollTo(item)}
+              >
                 {startCase(item)}
               </MenuItem>
             );
           })}
         </Flex>
+        <SwitchWrapper>
+          <Moon icon={faMoon} color={'heading'} mr={2} />
+          <ToggleButton onChange={() => toggleDark()} checked={dark} />
+        </SwitchWrapper>
       </Nav>
     </Fragment>
   );
@@ -123,6 +169,8 @@ MobileSidebar.propTypes = {
   display: PropTypes.array,
   sidebarOpen: PropTypes.bool,
   setSidebarOpen: PropTypes.func,
+  dark: PropTypes.bool,
+  toggleDark: PropTypes.func,
 };
 
 export default MobileSidebar;

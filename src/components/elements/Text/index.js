@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { typography, color, space } from 'styled-system';
 
 const Span = styled.span`
+  transition: 0.3s all;
+
   ${color}
   ${typography}
   ${space}

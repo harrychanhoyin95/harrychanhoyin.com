@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #FFF;
+    background-color: ${props => (props.dark ? '#0D0D10' : '#FFF')};
     overflow: ${props => (props.sidebarOpen ? 'hidden' : 'unset')};
   }
 

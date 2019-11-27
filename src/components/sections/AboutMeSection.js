@@ -43,7 +43,7 @@ const StyledFlex = styled(Flex)`
 const AboutMeSection = () => {
   const data = useStaticQuery(graphql`
     query AboutMeQuery {
-      desktop: file(relativePath: { eq: "aboutMe.jpg" }) {
+      desktop: file(relativePath: { eq: "aboutMe.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64
