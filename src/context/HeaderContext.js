@@ -29,7 +29,8 @@ class HeaderShowProvider extends React.Component {
   handleScroll() {
     const { prevScrollPos } = this.state;
     const currentScrollPos = window.pageYOffset;
-    const headerShow = prevScrollPos > currentScrollPos;
+    const headerShow =
+      prevScrollPos > currentScrollPos || currentScrollPos < 150;
 
     this.setState({
       prevScrollPos: currentScrollPos,
