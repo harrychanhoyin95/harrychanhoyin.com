@@ -1,5 +1,12 @@
 const path = require(`path`);
 
+let activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+console.log(`Using environment config: '${activeEnv}'`);
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Harry Chan',
@@ -34,7 +41,7 @@ module.exports = {
         background_color: '#FFF',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/logo_transparent.png', // This path is relative to the root of the site.
+        icon: 'src/images/logo-transparent.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

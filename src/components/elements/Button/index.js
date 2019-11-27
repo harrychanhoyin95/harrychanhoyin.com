@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { color, border, space, layout } from 'styled-system';
 
 const Anchor = styled.a`
-  width: 100%;
+  ${layout}
 `;
 
 const StyledButton = styled.button`
@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   padding: 16px 20px;
   font-weight: bold;
   height: 100%;
+  width: 100%;
   transition: 0.3s all;
 
   ${color}
@@ -47,7 +48,6 @@ const Button = ({
         color={'#999CA6'}
         backgroundColor={'#FFF'}
         borderRadius={shape === 'rounded' ? 1 : 0}
-        width={width}
         {...props}
       >
         {children}
@@ -57,13 +57,17 @@ const Button = ({
 
   if (link) {
     return (
-      <Anchor href={link} target={'_blank'} rel={'noopener noreferrer'}>
+      <Anchor
+        href={link}
+        target={'_blank'}
+        rel={'noopener noreferrer'}
+        width={width}
+      >
         <StyledButton
           borderColor={'borderColor'}
           color={inverted ? borderColor : 'buttonText'}
           backgroundColor={inverted ? color : backgroundColor}
           borderRadius={shape === 'rounded' ? 1 : 0}
-          width={width}
           {...props}
         >
           {children}
@@ -78,7 +82,6 @@ const Button = ({
       backgroundColor={backgroundColor}
       borderColor={'borderColor'}
       color={color}
-      width={width}
       borderRadius={shape === 'rounded' ? 1 : 0}
       {...props}
     >

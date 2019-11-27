@@ -85,7 +85,7 @@ const DesktopHeader = ({
 }) => {
   const data = useStaticQuery(graphql`
     query DesktopHeaderQuery {
-      desktop: file(relativePath: { eq: "logo_transparent.png" }) {
+      desktop: file(relativePath: { eq: "logo-transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64

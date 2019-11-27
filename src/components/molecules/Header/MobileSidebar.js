@@ -39,6 +39,7 @@ const Nav = styled.nav`
   transition: all 0.3s;
 
   ${color}
+  ${layout}
 `;
 
 const CloseBtn = styled.div`
@@ -117,7 +118,7 @@ const MobileSidebar = ({
 }) => {
   const data = useStaticQuery(graphql`
     query MobileHeaderQuery {
-      desktop: file(relativePath: { eq: "logo_transparent.png" }) {
+      desktop: file(relativePath: { eq: "logo-transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid_noBase64
