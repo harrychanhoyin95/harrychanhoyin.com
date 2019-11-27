@@ -102,6 +102,7 @@ const FixedNav = styled.div`
   width: 100%;
   top: ${props => (props.headerShow ? '0' : '-100px')};
   transition: 0.3s all;
+  z-index: 99;
 
   ${layout}
   ${color}

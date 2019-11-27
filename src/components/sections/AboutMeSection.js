@@ -13,9 +13,7 @@ import scrollTo from '../../utils/scroller';
 import CV from '../../assets/CV-HarryChan.pdf';
 
 const ButtonContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 8px;
+  display: flex;
 `;
 
 const ImageContainer = styled.div`
@@ -72,8 +70,10 @@ const AboutMeSection = () => {
             along my career path.
           </P>
           <ButtonContainer>
-            <Button onClick={() => scrollTo('project')}>View Works</Button>
-            <Button link={CV} inverted>
+            <Button onClick={() => scrollTo('project')} mr={1}>
+              View Works
+            </Button>
+            <Button link={CV} inverted ml={1}>
               Download Resume
             </Button>
           </ButtonContainer>
