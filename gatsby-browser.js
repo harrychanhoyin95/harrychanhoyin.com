@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { DarkModeProvider } from './src/context/DarkModeContext';
+import { SidebarProvider } from './src/context/SidebarContext';
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -10,5 +11,7 @@ export const onClientEntry = () => {
 };
 
 export const wrapRootElement = ({ element }) => (
-  <DarkModeProvider>{element}</DarkModeProvider>
+  <DarkModeProvider>
+    <SidebarProvider>{element}</SidebarProvider>
+  </DarkModeProvider>
 );

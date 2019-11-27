@@ -103,7 +103,7 @@ const MobileSidebar = ({
   headerItems,
   display,
   sidebarOpen,
-  setSidebarOpen,
+  toggleSidebarOpen,
   dark,
   toggleDark,
 }) => {
@@ -125,7 +125,7 @@ const MobileSidebar = ({
     <Fragment>
       <BurgerButton
         display={display}
-        onClick={() => setSidebarOpen(!sidebarOpen)}
+        onClick={() => toggleSidebarOpen()}
         color="burgerButton"
       >
         <BurgerBar top={'0'} />
@@ -138,7 +138,7 @@ const MobileSidebar = ({
         display={display}
       />
       <Nav display={display} sidebarOpen={sidebarOpen} bg="sidebar">
-        <CloseBtn onClick={() => setSidebarOpen(!sidebarOpen)} color="text">
+        <CloseBtn onClick={() => toggleSidebarOpen()} color="text">
           &times;
         </CloseBtn>
         <Flex flexDirection={'column'}>
@@ -168,7 +168,7 @@ MobileSidebar.propTypes = {
   headerItems: PropTypes.array,
   display: PropTypes.array,
   sidebarOpen: PropTypes.bool,
-  setSidebarOpen: PropTypes.func,
+  toggleSidebarOpen: PropTypes.func,
   dark: PropTypes.bool,
   toggleDark: PropTypes.func,
 };

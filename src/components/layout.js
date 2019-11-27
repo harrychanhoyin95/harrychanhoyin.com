@@ -18,6 +18,7 @@ import DarkModeContext from '../context/DarkModeContext';
 
 const Content = styled.main`
   margin-left: ${props => (props.sidebarOpen ? '60%' : '0')};
+  filter: ${props => (props.sidebarOpen ? 'blur(8px)' : 'none')};
   transition: all 0.3s;
 
   ${space}
@@ -38,7 +39,7 @@ const Overlay = styled.div`
   transition: all 0.3s;
 `;
 
-const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
+const Layout = ({ children, sidebarOpen, toggleSidebarOpen, ...props }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -61,7 +62,7 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
                 <Header
                   siteTitle={data.site.siteMetadata.title}
                   sidebarOpen={sidebarOpen}
-                  setSidebarOpen={setSidebarOpen}
+                  toggleSidebarOpen={toggleSidebarOpen}
                   toggleDark={toggleDark}
                   dark={dark}
                   {...props}
@@ -71,7 +72,7 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
                 </Content>
                 <Overlay
                   sidebarOpen={sidebarOpen}
-                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                  onClick={() => toggleSidebarOpen()}
                 />
               </ThemeProvider>
             );
@@ -85,7 +86,7 @@ const Layout = ({ children, sidebarOpen, setSidebarOpen, ...props }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   sidebarOpen: PropTypes.bool,
-  setSidebarOpen: PropTypes.func,
+  toggleSidebarOpen: PropTypes.func,
 };
 
 export default Layout;
