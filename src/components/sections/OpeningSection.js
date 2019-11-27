@@ -35,7 +35,7 @@ const AboutSection = () => {
   const imageData = data.desktop.childImageSharp.fluid;
 
   return (
-    <Section pt={[4, 7]} bg={'sectionColor'} name={'opening'}>
+    <Section pt={[5, 7]} bg={'sectionColor'} name={'opening'}>
       <Flex flexDirection={['column', 'row']}>
         <Flex
           flexDirection={'column'}

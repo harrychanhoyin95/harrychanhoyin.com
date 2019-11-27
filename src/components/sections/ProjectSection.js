@@ -28,9 +28,7 @@ const Card = styled(Flex)`
   ${border}
 `;
 
-const Image = styled(Img)`
-  height: 30%;
-`;
+const Image = styled(Img)``;
 
 const StyledFlex = styled(Flex)`
   margin-top: auto;
@@ -47,7 +45,7 @@ const Icon = styled(FontAwesomeIcon)`
 const ProjectSection = () => {
   const data = useStaticQuery(graphql`
     query ProjectSectionQuery {
-      allContentfulProject {
+      allContentfulProject(sort: { fields: [updatedAt], order: DESC }) {
         edges {
           node {
             techStack

@@ -28,7 +28,7 @@ const BoldText = styled(P)`
 const ExperienceSection = () => {
   const data = useStaticQuery(graphql`
     query ExperienceSectionQuery {
-      allContentfulExperience {
+      allContentfulExperience(sort: { fields: [updatedAt], order: DESC }) {
         edges {
           node {
             companyName
