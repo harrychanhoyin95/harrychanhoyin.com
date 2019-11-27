@@ -71,7 +71,7 @@ const Logo = styled(Img)`
 
 const SwitchWrapper = styled.div`
   position: absolute;
-  bottom: 32px;
+  bottom: 96px;
   display: flex;
   justify-content: center;
   align-items: center;
