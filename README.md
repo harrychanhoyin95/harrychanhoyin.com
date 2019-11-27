@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="http://harrychanhoyin95.com/">
-    <img alt="Harry Chan" src="https://i.imgur.com/k3vZTEr.png" />
+    <img alt="Harry Chan" src="https://i.imgur.com/k3vZTEr.png" width="48"/>
   </a>
 </p>
 <h1 align="center">
