@@ -43,7 +43,7 @@ const AboutSection = () => {
           justifyContent={'center'}
           mb={[4, 0]}
         >
-          <SectionHeading>I&apos;m Harry</SectionHeading>
+          <SectionHeading>Hi I&apos;m Harry</SectionHeading>
           <Introduction mb={3} color="subHeading">
             Web-application software engineer
           </Introduction>

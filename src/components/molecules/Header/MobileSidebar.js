@@ -157,7 +157,10 @@ const MobileSidebar = ({
                 key={item}
                 py={3}
                 color={'navText'}
-                onClick={() => scrollTo(item)}
+                onClick={() => {
+                  toggleSidebarOpen();
+                  scrollTo(item);
+                }}
               >
                 {startCase(item)}
               </MenuItem>

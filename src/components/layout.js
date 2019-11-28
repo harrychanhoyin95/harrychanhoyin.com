@@ -9,7 +9,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
-import { space } from 'styled-system';
+import { space, position } from 'styled-system';
+import Img from 'gatsby-image';
 
 import Header from './molecules/Header';
 import GlobalStyle from '../globalStyle';
@@ -24,7 +25,7 @@ const Content = styled.main`
   ${space}
 `;
 
-const Overlay = styled.div`
+const SidebarOverlay = styled.div`
   position: fixed;
   visibility: ${props => (props.sidebarOpen ? 'visible' : 'hidden')};
   opacity: ${props => (props.sidebarOpen ? 1 : 0)};
@@ -39,14 +40,30 @@ const Overlay = styled.div`
   transition: all 0.3s;
 `;
 
+const LogoOverlay = styled.div`
+  position: fixed;
+  height: 64px;
+  width: 64px;
+  opacity: 0.2;
+
+  ${position}
+`;
+
 const Layout = ({ children, sidebarOpen, toggleSidebarOpen, ...props }) => {
   return (
     <StaticQuery
       query={graphql`
-        query SiteTitleQuery {
+        query layoutQuery {
           site {
             siteMetadata {
               title
+            }
+          }
+          desktop: file(relativePath: { eq: "logo-transparent.png" }) {
+            childImageSharp {
+              fixed(width: 64) {
+                ...GatsbyImageSharpFixed
+              }
             }
           }
         }
@@ -70,10 +87,13 @@ const Layout = ({ children, sidebarOpen, toggleSidebarOpen, ...props }) => {
                 <Content sidebarOpen={sidebarOpen} pt={[6, 0]}>
                   {children}
                 </Content>
-                <Overlay
+                <SidebarOverlay
                   sidebarOpen={sidebarOpen}
                   onClick={() => toggleSidebarOpen()}
                 />
+                <LogoOverlay bottom={[96, 32]} right={[16, 32]}>
+                  <Img fixed={data.desktop.childImageSharp.fixed} />
+                </LogoOverlay>
               </ThemeProvider>
             );
           }}

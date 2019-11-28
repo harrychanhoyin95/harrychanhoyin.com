@@ -5,7 +5,7 @@ const scrollTo = name => {
     duration: 1000,
     delay: 100,
     smooth: 'easeInOutQuart',
-    offset: -50,
+    offset: -120,
   });
 };
 

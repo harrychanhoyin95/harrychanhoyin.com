@@ -12,11 +12,11 @@ I will be updating whenever I have some interesting side projects which are used
 
 ## 💻 Tech Stack
 
-* Code with [React](https://reactjs.org/)
+* Coded with [React](https://reactjs.org/)
 * Build with [Gatsby](https://www.gatsbyjs.org/)
 * Managed with [Contentful](https://www.contentful.com/)
 * Hosted with [Netlify](https://www.netlify.com/)
-* Coded with GraphQL
+* Fetched with GraphQL
 
 ## :email: Contact Me
 

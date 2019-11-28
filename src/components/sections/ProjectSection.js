@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { grid, border, color } from 'styled-system';
@@ -89,9 +89,13 @@ const ProjectSection = () => {
                 <Anchor href={pDetail.githubUrl} color={'heading'}>
                   <Icon icon={faGithub} size={'2x'} />
                 </Anchor>
-                <Anchor href={pDetail.hostUrl} color={'heading'}>
-                  <Icon icon={faExternalLinkAlt} size={'2x'} />
-                </Anchor>
+                {pDetail.hostUrl ? (
+                  <Anchor href={pDetail.hostUrl} color={'heading'}>
+                    <Icon icon={faExternalLinkAlt} size={'2x'} />
+                  </Anchor>
+                ) : (
+                  <Fragment />
+                )}
               </StyledFlex>
             </Card>
           );
