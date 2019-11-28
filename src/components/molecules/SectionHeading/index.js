@@ -24,7 +24,7 @@ const SectionHeading = ({ children, overlay, center }) => {
   return (
     <StyledHeading
       level={1}
-      fontSize={40}
+      fontSize={48}
       mt={0}
       mb={5}
       overlay={overlay}

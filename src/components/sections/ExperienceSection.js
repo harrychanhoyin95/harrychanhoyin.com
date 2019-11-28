@@ -35,6 +35,7 @@ const ExperienceSection = () => {
             employmentPeriod
             employmentPosition
             companyDescription
+            companyUrl
             projects {
               description
               client
@@ -61,7 +62,7 @@ const ExperienceSection = () => {
           <Card key={job.companyName} borderColor="transparent" mb={4}>
             <Flex>
               <LogoContainer
-                href="https://www.google.com"
+                href="{job.companyUrl}"
                 target="_blank"
                 rel="noopener noreferrer"
                 display={['none', 'block']}

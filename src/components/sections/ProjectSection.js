@@ -86,11 +86,21 @@ const ProjectSection = () => {
                 <P>Skills Used: {pDetail.techStack}</P>
               </Flex>
               <StyledFlex px={3} pb={3}>
-                <Anchor href={pDetail.githubUrl} color={'heading'}>
+                <Anchor
+                  href={pDetail.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color={'heading'}
+                >
                   <Icon icon={faGithub} size={'2x'} />
                 </Anchor>
                 {pDetail.hostUrl ? (
-                  <Anchor href={pDetail.hostUrl} color={'heading'}>
+                  <Anchor
+                    href={pDetail.hostUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color={'heading'}
+                  >
                     <Icon icon={faExternalLinkAlt} size={'2x'} />
                   </Anchor>
                 ) : (
