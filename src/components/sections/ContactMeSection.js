@@ -4,7 +4,6 @@ import { color } from 'styled-system';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import SectionHeading from '../molecules/SectionHeading';
@@ -62,9 +61,6 @@ const ContactMeSection = () => {
           rel="noopener noreferrer"
         >
           <FontAwesomeIcon icon={faLinkedinIn} />
-        </Anchor>
-        <Anchor bg={'primary'} color={'socialIcon'} href="tel:852-6353-1210">
-          <FontAwesomeIcon icon={faPhone} />
         </Anchor>
         <Anchor
           bg={'primary'}
