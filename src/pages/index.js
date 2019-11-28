@@ -1,6 +1,5 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import { Helmet } from 'react-helmet';
 
 import Layout from '../components/layout';
 import OpeningSection from '../components/sections/OpeningSection';
@@ -23,28 +22,23 @@ const IndexPage = () => {
         }
       `}
       render={() => (
-        <Helmet>
-          <meta charSet="uft-8" />
-          <title>Harry Chan</title>
-          <link rel="canonical" href="https://harrychanhoyin95.com/" />
-          <SidebarContext.Consumer>
-            {data => {
-              const { sidebarOpen, toggleSidebarOpen } = data;
-              return (
-                <Layout
-                  sidebarOpen={sidebarOpen}
-                  toggleSidebarOpen={toggleSidebarOpen}
-                >
-                  <OpeningSection />
-                  <AboutMeSection />
-                  <ExperienceSection />
-                  <ProjectSection />
-                  <ContactMeSection />
-                </Layout>
-              );
-            }}
-          </SidebarContext.Consumer>
-        </Helmet>
+        <SidebarContext.Consumer>
+          {data => {
+            const { sidebarOpen, toggleSidebarOpen } = data;
+            return (
+              <Layout
+                sidebarOpen={sidebarOpen}
+                toggleSidebarOpen={toggleSidebarOpen}
+              >
+                <OpeningSection />
+                <AboutMeSection />
+                <ExperienceSection />
+                <ProjectSection />
+                <ContactMeSection />
+              </Layout>
+            );
+          }}
+        </SidebarContext.Consumer>
       )}
     />
   );
