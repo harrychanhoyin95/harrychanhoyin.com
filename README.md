@@ -13,7 +13,7 @@ I will be updating whenever I have some interesting side projects which are used
 ## 💻 Tech Stack
 
 - Coded with [React](https://reactjs.org/)
-- Build with [Gatsby](https://www.gatsbyjs.org/)
+- Built with [Gatsby](https://www.gatsbyjs.org/)
 - Managed with [Contentful](https://www.contentful.com/)
 - Hosted with [Netlify](https://www.netlify.com/)
 - Fetched with [GraphQL](https://graphql.org/)

@@ -62,7 +62,7 @@ const ExperienceSection = () => {
           <Card key={job.companyName} borderColor="transparent" mb={4}>
             <Flex>
               <LogoContainer
-                href="{job.companyUrl}"
+                href={job.companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 display={['none', 'block']}
