@@ -91,7 +91,7 @@ const Layout = ({ children, sidebarOpen, toggleSidebarOpen, ...props }) => {
                   sidebarOpen={sidebarOpen}
                   onClick={() => toggleSidebarOpen()}
                 />
-                <LogoOverlay bottom={[96, 32]} right={[16, 32]}>
+                <LogoOverlay bottom={[32, 32]} right={[16, 32]}>
                   <Img fixed={data.desktop.childImageSharp.fixed} />
                 </LogoOverlay>
               </ThemeProvider>

@@ -12,17 +12,17 @@ I will be updating whenever I have some interesting side projects which are used
 
 ## 💻 Tech Stack
 
-* Coded with [React](https://reactjs.org/)
-* Build with [Gatsby](https://www.gatsbyjs.org/)
-* Managed with [Contentful](https://www.contentful.com/)
-* Hosted with [Netlify](https://www.netlify.com/)
-* Fetched with GraphQL
+- Coded with [React](https://reactjs.org/)
+- Build with [Gatsby](https://www.gatsbyjs.org/)
+- Managed with [Contentful](https://www.contentful.com/)
+- Hosted with [Netlify](https://www.netlify.com/)
+- Fetched with [GraphQL](https://graphql.org/)
 
 ## :email: Contact Me
 
-* Email: [harrychanhoyin95@gmail.com](mailto:harrychanhoyin95@gmail.com)
-* Linkedin: [Harry Chan](https://www.linkedin.com/in/harry-chan-045740b7/)
-* Github: [Harry Chan](https://github.com/harrychanhoyin95)
+- Email: [harrychanhoyin95@gmail.com](mailto:harrychanhoyin95@gmail.com)
+- Linkedin: [Harry Chan](https://www.linkedin.com/in/harry-chan-045740b7/)
+- Github: [Harry Chan](https://github.com/harrychanhoyin95)
 
 ## 💫 Deployment Status
 
