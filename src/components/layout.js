@@ -16,6 +16,7 @@ import Header from './molecules/Header';
 import GlobalStyle from '../globalStyle';
 import getTheme from '../utils/getTheme';
 import DarkModeContext from '../context/DarkModeContext';
+import { scrollToTop } from '../utils/scroller';
 
 const Content = styled.main`
   margin-left: ${props => (props.sidebarOpen ? '60%' : '0')};
@@ -45,6 +46,7 @@ const LogoOverlay = styled.div`
   height: 64px;
   width: 64px;
   opacity: 0.2;
+  cursor: pointer;
 
   ${position}
 `;
@@ -91,7 +93,11 @@ const Layout = ({ children, sidebarOpen, toggleSidebarOpen, ...props }) => {
                   sidebarOpen={sidebarOpen}
                   onClick={() => toggleSidebarOpen()}
                 />
-                <LogoOverlay bottom={[32, 32]} right={[16, 32]}>
+                <LogoOverlay
+                  bottom={[32, 32]}
+                  right={[16, 32]}
+                  onClick={() => scrollToTop()}
+                >
                   <Img fixed={data.desktop.childImageSharp.fixed} />
                 </LogoOverlay>
               </ThemeProvider>

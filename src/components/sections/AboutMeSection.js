@@ -9,11 +9,13 @@ import Flex from '../elements/Flex';
 import Button from '../elements/Button';
 import P from '../elements/P';
 import SectionHeading from '../molecules/SectionHeading';
-import scrollTo from '../../utils/scroller';
+import { scrollTo } from '../../utils/scroller';
 import CV from '../../assets/CV-HarryChan.pdf';
 
 const ButtonContainer = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ImageContainer = styled.div`
@@ -59,7 +61,9 @@ const AboutMeSection = () => {
         <ImageContainer width={['100%', '50%']}>
           <Image fluid={imageData} />
           <HeadingWrapper>
-            <SectionHeading overlay>About me</SectionHeading>
+            <SectionHeading overlay width={'overlay'}>
+              About me
+            </SectionHeading>
           </HeadingWrapper>
         </ImageContainer>
         <StyledFlex flexDirection={'column'} width={['100%', '50%']}>
@@ -70,10 +74,10 @@ const AboutMeSection = () => {
             along my career path.
           </P>
           <ButtonContainer>
-            <Button onClick={() => scrollTo('project')} mr={1}>
+            <Button onClick={() => scrollTo('project')} mr={3}>
               View Works
             </Button>
-            <Button link={CV} inverted ml={1}>
+            <Button link={CV} inverted>
               Download Resume
             </Button>
           </ButtonContainer>

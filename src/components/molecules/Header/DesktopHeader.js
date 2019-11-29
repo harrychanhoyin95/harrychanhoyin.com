@@ -9,7 +9,7 @@ import { Switch } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
-import scrollTo from '../../../utils/scroller';
+import { scrollTo } from '../../../utils/scroller';
 import 'antd/es/switch/style/index.css';
 
 const Nav = styled.nav`

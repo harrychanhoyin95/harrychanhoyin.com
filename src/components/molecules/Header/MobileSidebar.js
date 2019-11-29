@@ -11,7 +11,7 @@ import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import BurgerBar from './BurgerBar';
 import Flex from '../../elements/Flex';
-import scrollTo from '../../../utils/scroller';
+import { scrollTo } from '../../../utils/scroller';
 import 'antd/es/switch/style/index.css';
 
 const BurgerButton = styled.div`

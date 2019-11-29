@@ -43,15 +43,15 @@ const AboutSection = () => {
           justifyContent={'center'}
           mb={[4, 0]}
         >
-          <SectionHeading>Hi I&apos;m Harry</SectionHeading>
-          <Introduction mb={3} color="subHeading">
+          <SectionHeading mb={4}>Hi I&apos;m Harry</SectionHeading>
+          <Introduction mb={4} color="subHeading">
             Web-application software engineer
           </Introduction>
           <Button
             link={'mailto:harrychanhoyin95@gmail.com'}
             width={['100%', '50%']}
           >
-            Hire Me
+            Connect With Me
           </Button>
         </Flex>
         <Flex width={['100%', '50%']}>

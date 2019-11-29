@@ -1,6 +1,6 @@
-import { scroller } from 'react-scroll';
+import { scroller, animateScroll } from 'react-scroll';
 
-const scrollTo = name => {
+export const scrollTo = name => {
   scroller.scrollTo(name, {
     duration: 1000,
     delay: 100,
@@ -9,4 +9,10 @@ const scrollTo = name => {
   });
 };
 
-export default scrollTo;
+export const scrollToTop = () => {
+  animateScroll.scrollToTop({
+    duration: 1000,
+    delay: 100,
+    smooth: 'easeInOutQuart',
+  });
+};
