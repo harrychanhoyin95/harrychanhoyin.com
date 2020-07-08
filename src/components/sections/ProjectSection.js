@@ -52,6 +52,7 @@ const ProjectSection = () => {
             name
             description
             githubUrl
+            secondGithubUrl
             hostUrl
             image {
               sizes(maxWidth: 500) {
@@ -86,14 +87,26 @@ const ProjectSection = () => {
                 <P>Skills Used: {pDetail.techStack}</P>
               </Flex>
               <StyledFlex px={3} pb={3}>
-                <Anchor
-                  href={pDetail.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  color={'heading'}
-                >
-                  <Icon icon={faGithub} size={'2x'} />
-                </Anchor>
+                {pDetail.githubUrl ? (
+                  <Anchor
+                    href={pDetail.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color={'heading'}
+                  >
+                    <Icon icon={faGithub} size={'2x'} />
+                  </Anchor>
+                ) : null}
+                {pDetail.secondGithubUrl ? (
+                  <Anchor
+                    href={pDetail.secondGithubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    color={'heading'}
+                  >
+                    <Icon icon={faGithub} size={'2x'} />
+                  </Anchor>
+                ) : null}
                 {pDetail.hostUrl ? (
                   <Anchor
                     href={pDetail.hostUrl}

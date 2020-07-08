@@ -11,7 +11,7 @@ module.exports = {
   siteMetadata: {
     title: 'Harry Chan',
     description: 'A portfolio website to showcase my works.',
-    author: 'Harry Chan',
+    siteUrl: 'https://harrychanhoyin95.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
