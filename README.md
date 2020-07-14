@@ -1,6 +1,6 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="http://harrychanhoyin95.com/">
+  <a href="http://profile.harrychanhoyin95.com/">
     <img alt="Harry Chan" src="https://i.imgur.com/k3vZTEr.png" width="48"/>
   </a>
 </p>

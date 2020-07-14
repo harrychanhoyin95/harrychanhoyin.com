@@ -18,7 +18,7 @@ export const wrapRootElement = ({ element }) => (
     <Helmet>
       <meta charSet="uft-8" />
       <title>Harry Chan</title>
-      <link rel="canonical" href="https://harrychanhoyin95.com/" />
+      <link rel="canonical" href="https://profile.harrychanhoyin95.com/" />
     </Helmet>
     <DarkModeProvider>
       <SidebarProvider>
