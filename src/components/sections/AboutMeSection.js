@@ -10,7 +10,7 @@ import Button from '../elements/Button';
 import P from '../elements/P';
 import SectionHeading from '../molecules/SectionHeading';
 import { scrollTo } from '../../utils/scroller';
-import CV from '../../assets/CV-HarryChan.pdf';
+import CV from '../../assets/CV_HarryChan.pdf';
 
 const ButtonContainer = styled.div`
   display: flex;
