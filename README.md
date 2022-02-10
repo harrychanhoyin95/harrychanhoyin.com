@@ -1,54 +1,28 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+  <a href="http://profile.harrychanhoyin95.com/">
+    <img alt="Harry Chan" src="https://i.imgur.com/k3vZTEr.png" width="48"/>
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  My Personal Resume Website
 </h1>
 
-## 🚀 Quick start
+I will be updating whenever I have some interesting side projects which are used to challenge myself!
 
-1.  **Create a Gatsby site.**
+## 💻 Tech Stack
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+- Coded with [React](https://reactjs.org/)
+- Built with [Gatsby](https://www.gatsbyjs.org/)
+- Managed with [Contentful](https://www.contentful.com/)
+- Hosted with [Netlify](https://www.netlify.com/)
+- Fetched with [GraphQL](https://graphql.org/)
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## :email: Contact Me
 
-2.  **Start developing.**
+- Email: [harrychanhoyin95@gmail.com](mailto:harrychanhoyin95@gmail.com)
+- Linkedin: [Harry Chan](https://www.linkedin.com/in/harry-chan-045740b7/)
+- Github: [Harry Chan](https://github.com/harrychanhoyin95)
 
-    Navigate into your new site’s directory and start it up.
+## 💫 Deployment Status
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
-
-3.  **Open the code and start customizing!**
-
-    Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/799a96ff-68c6-4479-8898-d08efd966061/deploy-status)](https://app.netlify.com/sites/upbeat-franklin-027b15/deploys)

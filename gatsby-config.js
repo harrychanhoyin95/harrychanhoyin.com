@@ -1,30 +1,55 @@
+require('dotenv').config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
-  siteMetadata: {
-      title: `harrychanhoyin95.com`,
-    siteUrl: `https://www.yourdomain.tld`
-  },
-  plugins: [{
-    resolve: 'gatsby-source-contentful',
-    options: {
-      "accessToken": "AZm-X_E3N_VuAlUcXh3CmhYM-dtntBOJ8VqdHPuB9cI",
-      "spaceId": "evdny9l0ae8a"
-    }
-  }, "gatsby-plugin-styled-components", {
-    resolve: 'gatsby-plugin-google-analytics',
-    options: {
-      "trackingId": "UA-153629856-1"
-    }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-helmet", "gatsby-plugin-sitemap", {
-    resolve: 'gatsby-plugin-manifest',
-    options: {
-      "icon": "src/images/icon.png"
-    }
-  }, "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "images",
-      "path": "./src/images/"
-    },
-    __key: "images"
-  }]
+	siteMetadata: {
+		title: 'Harry Chan',
+		description: 'A portfolio website to showcase my works.',
+		siteUrl: 'https://www.harrychanhoyin95.com/',
+	},
+	plugins: [
+		{
+			resolve: 'gatsby-source-contentful',
+			options: {
+				accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+				spaceId: process.env.CONTENTFUL_SPACE_ID,
+			},
+		},
+		'gatsby-plugin-styled-components',
+		{
+			resolve: 'gatsby-plugin-google-analytics',
+			options: {
+				trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
+			},
+		},
+    'gatsby-plugin-postcss',
+		'gatsby-plugin-image',
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-sitemap',
+		{
+			resolve: 'gatsby-plugin-manifest',
+			options: {
+				icon: 'src/images/logo.png',
+			},
+		},
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'images',
+				path: './src/images/',
+			},
+			__key: 'images',
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'assets',
+				path: './src/assets/',
+			},
+			__key: 'assets',
+		},
+	],
 };
