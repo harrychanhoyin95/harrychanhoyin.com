@@ -51,5 +51,6 @@ module.exports = {
 			},
 			__key: 'assets',
 		},
+		'gatsby-plugin-netlify',
 	],
 };
